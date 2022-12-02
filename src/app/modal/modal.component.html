@@ -1,0 +1,12 @@
+<!-- O ng-container serve para não precisar colocar uma div a mais na DOM apenas para fazer o ngIf que,
+    por sua vez, serve para verificar se o modal será mostrado ou não -->
+<ng-container *ngIf="mostrar">
+    <div class="modal">
+        <ng-content select="[titulo]">
+            <!-- O texto será recebido por quem irá puxar o modal adicionando "#titulo"-->
+        </ng-content>
+        <ng-content select="[texto]"></ng-content>
+        <ng-content select="[fechar]"></ng-content>
+    </div>
+    <div class="overlay"></div>
+</ng-container>

@@ -1,0 +1,27 @@
+.modal {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #333;
+    min-width: 320px;
+    position: fixed;
+
+    /* Para deixar centralizado */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+
+    z-index: 10; /* Essa propriedade faz com que um valor que sobrepõe outro. O elemento que tiver o maior valor irá ser o sobreposto.*/
+}
+
+/* Parte que fica "escura" quando o modal é ativado */
+.overlay {
+    background: #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
