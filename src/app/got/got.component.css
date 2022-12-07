@@ -1,0 +1,39 @@
+.logo {
+    margin: 20px 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 60vw;
+}
+
+.containerImagens {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgs {
+    width: 13%;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.tituloModal {
+    display: flex;
+    justify-content: center;
+}
+
+.divModal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.divModal > img {
+    width: 100%;
+    margin: 0 10% 20px 10%;
+}

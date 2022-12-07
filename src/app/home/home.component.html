@@ -1,0 +1,48 @@
+<button (click)="modalDog.mostrarModal()">Dogs</button>
+
+<modal-component #modalDog>
+    <h1 titulo>Dogzin</h1>
+    <div texto>
+        <select [(ngModel)]="selectedTag">
+            <option *ngFor="let tag of tagsDog" [value]="tag">{{ tag }}</option>
+        </select>
+
+        <button (click)="modalDogImg.mostrarModal()" (click)="consultarDogs()">Imagem</button>
+
+        <modal-component #modalDogImg>
+            <div texto>
+                <img *ngIf="linkImage" [src]="linkImage" style="width: 300px;"/>
+            </div>
+            <div fechar>
+                <button (click)="modalDogImg.mostrarModal()">Fechar</button>
+            </div>
+        </modal-component>
+    </div>
+    <div fechar>
+        <button (click)="modalDog.mostrarModal()">Fechar</button>
+    </div>
+</modal-component>
+
+<button (click)="modalCat.mostrarModal()">Cats</button>
+<modal-component #modalCat>
+    <h1 titulo>Catszin</h1>
+    <div texto>
+        <select [(ngModel)]="selectedTag">
+            <option *ngFor="let tag of tagsCat" [value]="tag">{{ tag }}</option>
+        </select>
+
+        <button (click)="modalCatImg.mostrarModal()" (click)="consultarCats()">Imagem</button>
+
+        <modal-component #modalCatImg>
+            <div texto>
+                <img *ngIf="linkImage" [src]="linkImage" style="width: 300px; max-height: 500px;"/>
+            </div>
+            <div fechar>
+                <button (click)="modalCatImg.mostrarModal()">Fechar</button>
+            </div>
+        </modal-component>
+    </div>
+    <div fechar>
+        <button (click)="modalCat.mostrarModal()">Fechar</button>
+    </div>
+</modal-component>

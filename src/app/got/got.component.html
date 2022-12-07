@@ -1,0 +1,16 @@
+<div class="logo">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Game_of_Thrones_2011_logo.svg/2560px-Game_of_Thrones_2011_logo.svg.png" alt="">
+</div>
+
+<div class="containerImagens">
+  <img [src]="i.imageUrl" alt="" *ngFor="let i of tagsGame" (click)="selectTag(i)" (click)="modal.mostrarModal()" class="imgs">
+</div>
+
+<modal-component #modal>
+  <h1 titulo class="tituloModal"> {{ selectedTag.fullName }}</h1>
+  <div texto class="divModal">
+    <img [src]="selectedTag.imageUrl" alt="">
+    Família: {{ selectedTag.family }} <br>
+    Título: {{ selectedTag.title }}
+  </div>
+</modal-component>

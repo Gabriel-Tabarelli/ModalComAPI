@@ -1,15 +1,13 @@
-
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
-export class AppService {
+export class HomeService {
 
     constructor(
         private httpClientDog: HttpClient,
         private httpClientCats: HttpClient,
-        private httpClientGame: HttpClient
     ) {}
 
     getTagsDogs(): Observable<string[]> {
@@ -19,9 +17,4 @@ export class AppService {
     getTagsCats(): Observable<string[]> {
         return this.httpClientCats.get<string[]>('https://cataas.com/api/tags');
     }
-
-    getTagsGames(): Observable<{ imageUrl }[]> {
-        return this.httpClientGame.get<{ imageUrl }[]>('https://thronesapi.com/api/v2/Characters');
-    }
-
 }
